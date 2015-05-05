@@ -160,13 +160,18 @@ class SrcAttribute extends WebViewAttribute
     # Navigate to |this.src|.
     httpreferrer = @webViewImpl.attributes[webViewConstants.ATTRIBUTE_HTTPREFERRER].getValue()
     urlOptions = if httpreferrer then {httpreferrer} else {}
-    remote.getGuestWebContents(@webViewImpl.guestInstanceId).loadUrl @getValue(), urlOptions
+    
+    useragent = @webViewImpl.attributes[webViewConstants.ATTRIBUTE_HTTPREFERRER].getValue()
+    
+    guestContents = remote.getGuestWebContents(@webViewImpl.guestInstanceId)
+    guestContents.setUserAgent(guestContents) if guestContents
+    guestContents.loadUrl @getValue(), urlOptions
 
 # Attribute specifies HTTP referrer.
 class HttpReferrerAttribute extends WebViewAttribute
   constructor: (webViewImpl) ->
     super webViewConstants.ATTRIBUTE_HTTPREFERRER, webViewImpl
-
+    
 # Attribute specifies HTTP referrer.
 class UserAgentAttribute extends WebViewAttribute
   constructor: (webViewImpl) ->
