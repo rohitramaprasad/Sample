@@ -1,0 +1,14 @@
+.DS_Store
+/build/
+/dist/
+/external_binaries/
+/out/
+/vendor/brightray/vendor/download/
+/vendor/python_26/
+/vendor/npm/
+node_modules/
+*.xcodeproj
+*.swp
+*.pyc
+debug.log
+npm-debug.log
