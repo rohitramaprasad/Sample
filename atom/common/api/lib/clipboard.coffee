@@ -1,9 +1,0 @@
-binding = process.atomBinding 'clipboard'
-module.exports =
-  has: (format, type='standard') -> binding._has format, type
-  read: (format, type='standard') -> binding._read format, type
-  readText: (type='standard') -> binding._readText type
-  writeText: (text, type='standard') -> binding._writeText text, type
-  readImage: (type='standard') -> binding._readImage type
-  writeImage: (image, type='standard') -> binding._writeImage image, type
-  clear: (type='standard') -> binding._clear type
