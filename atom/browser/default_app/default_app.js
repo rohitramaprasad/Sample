@@ -15,9 +15,9 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    resizable: false,
+    resizable: true,
     'auto-hide-menu-bar': true,
-    'use-content-size': true,
+    //'use-content-size': true,
   });
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
   mainWindow.focus();
